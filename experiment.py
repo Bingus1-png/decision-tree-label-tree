@@ -5,8 +5,8 @@
 
 Run this file with Python 3.12+ after installing numpy, pandas, matplotlib,
 and scikit-learn. It installs nothing and requires no other project files.
-The original experiment writes two CSVs and eight PNGs under outputs/; the validation
-experiment writes three CSVs and five PNGs under outputs/validation_noise/.
+The training experiment writes two CSVs and eight PNGs under experiment_1_training_noise/.
+The validation experiment writes three CSVs and five PNGs under experiment_2_validation_noise/.
 Figures 06-13 are additional descriptive views of the same saved results, added
 after the experiments. They introduce no new model fits or significance tests.
 Experiment 1 retains 20 repetitions (320 fits). Experiment 2 was expanded after
@@ -78,7 +78,7 @@ TREE_SETTINGS = {
 }
 
 BASE_DIR = Path(__file__).resolve().parent
-OUTPUT_DIR = BASE_DIR / "outputs"
+OUTPUT_DIR = BASE_DIR / "experiment_1_training_noise"
 FIGURE_DIR = OUTPUT_DIR / "figures"
 RAW_PATH = OUTPUT_DIR / "raw_results.csv"
 SUMMARY_PATH = OUTPUT_DIR / "summary_results.csv"
@@ -123,7 +123,7 @@ SELECTION_EXPECTED_FITS = len(SELECTION_SEEDS) * len(SELECTION_TRAIN_NOISE_RATES
 SELECTION_EXPECTED_OUTCOMES = len(SELECTION_SEEDS) * len(SELECTION_TRAIN_NOISE_RATES) * len(SELECTION_VALIDATION_NOISE_RATES)
 SELECTION_EXPECTED_GROUPS = 16
 SELECTION_EXPECTED_FREQUENCY_ROWS = 64
-SELECTION_OUTPUT_DIR = OUTPUT_DIR / "validation_noise"
+SELECTION_OUTPUT_DIR = BASE_DIR / "experiment_2_validation_noise"
 SELECTION_FIGURE_DIR = SELECTION_OUTPUT_DIR / "figures"
 SELECTION_RAW_PATH = SELECTION_OUTPUT_DIR / "selection_raw.csv"
 SELECTION_SUMMARY_PATH = SELECTION_OUTPUT_DIR / "selection_summary.csv"
